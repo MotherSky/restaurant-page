@@ -67,7 +67,7 @@ body{
 }
 
 .Home div.image-div{
-    background: url(../images/marvin-meyer--q1Egzksy1w-unsplash.jpg) no-repeat center center fixed;
+    background: url(../images/home.jpg) no-repeat center center fixed;
     background-size: cover;
     background-attachment: scroll;
     height: 100%;
