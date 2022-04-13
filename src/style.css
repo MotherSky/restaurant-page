@@ -1,0 +1,119 @@
+html{
+    box-sizing: border-box;
+    min-height: 100vh;
+    background-image: url(../images/background.jpg);
+}
+
+html * {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    min-height: 100vh;
+    font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
+}
+
+#content {
+    height: 100vh;
+}
+
+#header {
+    background-color: rgba(50, 48, 48, 0.6);
+    position: fixed;
+    width: 100%;
+    color: aliceblue;
+    font-size: 24px;
+    padding: 24px 0;
+}
+
+#header ul{
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    padding: 0 10%;
+}
+
+#header li{
+    cursor: pointer;
+    padding: 8px 0;
+    width: 80%;
+    text-align: center;
+}
+
+#header li.active-item,
+#header li:hover {
+    color : #C28446;
+    border-top: 1px solid #C28446;
+}
+
+.content-item{
+    display: none;
+}
+
+.active-content {
+    display: block;
+}
+
+.Home.active-content {
+    height: 100%;
+    text-align: center;
+    color: wheat;
+    text-shadow: -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.Home div.image-div{
+    background: url(../images/marvin-meyer--q1Egzksy1w-unsplash.jpg) no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: scroll;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Home p {
+    padding: 16px 10%;
+}
+
+#content .big-text{
+    font-weight: 600;
+    padding-top: 132px;
+    font-size: 64px;
+}
+
+#content .medium-text {
+    font-size: 42px;
+}
+
+#content .small-text {
+    font-size: 16px;
+    column-count: 2;
+    padding: 16px 20%;
+}
+
+#content >.Menu {
+    height: 100%;
+}
+
+#content >.Location {
+    background: url(../images/restaurant-in-valkenswaard.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+}
+
+#content >.About {
+    background: url(../images/restaurant.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+}
+
+.Home .awards-div {
+    margin: 48px 10%;
+    display: flex;
+    justify-content: space-around;
+}
