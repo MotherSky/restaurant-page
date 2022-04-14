@@ -4,7 +4,7 @@ export default function home(){
     const descriptionDiv = document.createElement('div');
     const awardsDiv = document.createElement('div');
 
-    HomeContent.classList.add("Home", "content-item", "active-content");
+    HomeContent.classList.add("Home", "content-item"); // ADD active-content when finished testing
     imageDiv.classList.add("image-div");
     descriptionDiv.classList.add("description-div");
     awardsDiv.classList.add("awards-div");
@@ -23,7 +23,7 @@ export default function home(){
     boldTitle.classList.add("big-text");
     description.classList.add("small-text");
 
-    for (let i = 0; i < 5; i++){
+    for (let i = 0; i < 5; i++){ // create 5 nodes and add awards to each one
         let img = document.createElement('img');
         img.setAttribute("src", "../images/s1 " + i + ".png");
         awardsDiv.appendChild(img);

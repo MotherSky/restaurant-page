@@ -11,12 +11,24 @@ html * {
 
 body{
     min-height: 100vh;
-    font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    text-shadow: -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 #content {
     height: 100vh;
+    text-align: center;
+    color: wheat;
 }
+
+/*
+**
+** HEADER CSS
+**
+*/
 
 #header {
     background-color: rgba(50, 48, 48, 0.6);
@@ -48,6 +60,12 @@ body{
     border-top: 1px solid #C28446;
 }
 
+/*
+**
+** HIDE TABS OTHER THAN HOME
+**
+*/
+
 .content-item{
     display: none;
 }
@@ -56,27 +74,13 @@ body{
     display: block;
 }
 
-.Home.active-content {
-    height: 100%;
-    text-align: center;
-    color: wheat;
-    text-shadow: -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
-}
+/*
+**
+** CONTENT CSS
+**
+*/
 
-.Home div.image-div{
-    background: url(../images/home.jpg) no-repeat center center fixed;
-    background-size: cover;
-    background-attachment: scroll;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.Home p {
+#content p {
     padding: 16px 10%;
 }
 
@@ -96,9 +100,147 @@ body{
     padding: 16px 20%;
 }
 
-#content >.Menu {
+/*
+**
+** HOME CSS
+**
+*/
+
+.Home.active-content {
     height: 100%;
 }
+
+.Home div.image-div{
+    background: url(../images/home.jpg) no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: scroll;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Home .awards-div {
+    margin: 48px 10%;
+    display: flex;
+    justify-content: space-around;
+}
+
+/*
+**
+** MENU CSS
+**
+*/
+
+#content >.Menu {
+    height: 100%;
+    text-align: center;
+}
+
+#content .images-div {
+    margin: 16px 10%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.images-div .main-courses,
+.images-div .cocktails{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+}
+
+.images-div .main-courses {
+    background: url(../images/burger.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.images-div .cocktails {
+    background: url(../images/cocktail.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.images-div p:hover{
+    cursor: pointer;
+}
+
+/*
+**
+** MENU MODAL
+**
+*/
+
+.modal-bg {
+    width: 100%;
+    height: 100%;
+    background: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.modal-content{
+    position: relative;
+    width: 80%;
+    height: 90%;
+    margin-top: 120px;
+    background-color: #464a4c;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.menu-img {
+    width: 100%;
+    height: 100%;
+}
+
+.menu-items{
+    padding: 64px 48px 48px 48px;
+}
+
+.menu-title{
+    display: inline-block;
+    font-size: 42px;
+    border-bottom: 5px solid #0b620b;
+}
+
+.items {
+    padding: 32px 0;
+    display: grid;
+    grid-auto-rows: auto;
+    font-size: 14px;
+    grid-gap: 24px;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 1fr 24px;
+}
+
+.left-section {
+    display: grid;
+    grid-gap: 8px;
+
+}
+
+.close-btn {
+    position: absolute;
+    right: 15px;
+    top: 0px;
+    font-size: 48px;
+    cursor: pointer;
+}
+/*
+**
+** LOCATION CSS
+**
+*/
 
 #content >.Location {
     background: url(../images/restaurant-in-valkenswaard.jpg) no-repeat center center fixed;
@@ -112,8 +254,3 @@ body{
     height: 100%;
 }
 
-.Home .awards-div {
-    margin: 48px 10%;
-    display: flex;
-    justify-content: space-around;
-}

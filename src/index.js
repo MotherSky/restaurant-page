@@ -17,7 +17,7 @@ function createHeaderItems(){
         items[i].classList.add("header-item");
         list.appendChild(items[i]); // add each element to parent(ul)
     }
-    list.firstChild.classList.add("active-item"); // add active-item class to first item(home)
+    list.children[1].classList.add("active-item"); // add active-item class to first item(home) (ADD IT BACK TO FIRST CHILD WHEN FINISHED TESTING)
     return (list);
 }
 
@@ -29,7 +29,6 @@ function selectTab(){
             if (!e.target.classList.contains("active-item")){ // if the item isn't active already
                 headerItems.forEach((item) => item.classList.remove("active-item")); // remove other active items
                 e.target.classList.add("active-item");
-                console.log(contentItems);
                 contentItems.forEach((item) => {
                     item.classList.remove("active-content");
                 });
