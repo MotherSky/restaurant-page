@@ -106,11 +106,11 @@ body{
 **
 */
 
-.Home.active-content {
+.home.active-content {
     height: 100%;
 }
 
-.Home div.image-div{
+.home div.image-div{
     background: url(../images/home.jpg) no-repeat center center fixed;
     background-size: cover;
     background-attachment: scroll;
@@ -120,7 +120,7 @@ body{
     justify-content: center;
 }
 
-.Home .awards-div {
+.home .awards-div {
     margin: 48px 10%;
     display: flex;
     justify-content: space-around;
@@ -132,7 +132,7 @@ body{
 **
 */
 
-#content >.Menu {
+#content >.menu {
     height: 100%;
     text-align: center;
 }
@@ -249,15 +249,19 @@ body{
 **
 */
 
-#content >.Location {
-    /*background: url(../images/restaurant-in-valkenswaard.jpg) no-repeat center center fixed;
-    background-size: cover;
-    height: 100%;*/
+#content >.visit-us div{
+    display: grid;
+    margin-bottom: 32px;
 }
 
-#content >.About {
-    /*background: url(../images/restaurant.jpg) no-repeat center center fixed;
-    background-size: cover;
-    height: 100%;*/
+#content >.visit-us >div:first-of-type{
+    justify-content: center;
 }
+
+.visit-us a {
+    padding: 8px;
+    color: #bbc0c2;
+}
+
+
 

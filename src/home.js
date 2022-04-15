@@ -4,7 +4,7 @@ export default function home(){
     const descriptionDiv = document.createElement('div');
     const awardsDiv = document.createElement('div');
 
-    HomeContent.classList.add("Home", "content-item"); // ADD active-content when finished testing
+    HomeContent.classList.add("home", "content-item"); // ADD active-content when finished testing
     imageDiv.classList.add("image-div");
     descriptionDiv.classList.add("description-div");
     awardsDiv.classList.add("awards-div");

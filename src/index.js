@@ -1,6 +1,6 @@
 import home from './home.js';
 import menu from './menu.js';
-import location from './location.js'
+import visit from './visit.js'
 import about from './about.js'
 
 const contentDiv = document.querySelector("#content");
@@ -9,15 +9,16 @@ const body = document.body;
 function createHeaderItems(){
     const list = document.createElement("ul");
     let items = Array(4);
-    const itemsContent = ["Home", "Menu", "Location", "About"];
+    const itemsContent = ["Home", "Menu", "Visit Us", "Contact"];
+    const itemsClasses = ["home", "menu", "visit-us", "contact"];
     for (let i = 0; i < items.length; i++){
         items[i] = document.createElement("li"); // create 4 ul items
         items[i].textContent = itemsContent[i]; // change the text of each li
-        items[i].classList.add(itemsContent[i]); // add a class for each li
+        items[i].classList.add(itemsClasses[i]); // add a class for each li
         items[i].classList.add("header-item");
         list.appendChild(items[i]); // add each element to parent(ul)
     }
-    list.children[1].classList.add("active-item"); // add active-item class to first item(home) (ADD IT BACK TO FIRST CHILD WHEN FINISHED TESTING)
+    list.children[2].classList.add("active-item"); // add active-item class to first item(home) (ADD IT BACK TO FIRST CHILD WHEN FINISHED TESTING)
     return (list);
 }
 
@@ -48,5 +49,5 @@ function createHeader(){
 }
 
 body.insertBefore(createHeader(), contentDiv);
-contentDiv.append(home(), menu(), location(), about());
+contentDiv.append(home(), menu(), visit(), about());
 selectTab();

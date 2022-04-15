@@ -162,7 +162,7 @@ export default function menu(){
     const mainCoursesText = document.createElement('p');
     const cocktailsText = document.createElement('p');
 
-    menuContent.classList.add("Menu", "content-item", "active-content"); // remove active when finished testing
+    menuContent.classList.add("menu", "content-item");
     imagesDiv.classList.add("images-div");
     mainCoursesDiv.classList.add("main-courses");
     cocktailsDiv.classList.add("cocktails");

@@ -1,5 +1,5 @@
 export default function about(){
     const element = document.createElement('div');
-    element.classList.add("About", "content-item");
+    element.classList.add("contact", "content-item");
     return (element);
 }
