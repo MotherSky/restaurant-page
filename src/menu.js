@@ -1,11 +1,18 @@
-function createModal(menuArray, imageSrc, titleText, id){
+function createModal(menuArray, imageArr, titleText, id){
     const modalBg = document.createElement('div');
     const modalContent = document.createElement('div');
     const closeBtn = document.createElement('div');
     closeBtn.innerText = "\u00D7";
     closeBtn.classList.add("close-btn");
-    const menuImg = document.createElement('img');
-    menuImg.setAttribute("src", imageSrc);
+    const menuImgContainer = document.createElement('div');
+    for (let i = 0; i < imageArr.length; i++){
+        let menuImg = document.createElement('img');
+        menuImg.setAttribute("src", imageArr[i]);
+        menuImgContainer.appendChild(menuImg);
+    }
+    //const menuImg = document.createElement('img');
+    //menuImg.setAttribute("src", imageArr);
+    //menuImgContainer.appendChild(menuImg);
     const menuItems = document.createElement('div');
     const menuTitle = document.createElement('p'); // Main courses || cocktails
     menuTitle.textContent = titleText;
@@ -14,7 +21,7 @@ function createModal(menuArray, imageSrc, titleText, id){
     modalBg.id = id;
     modalBg.classList.add("modal-bg");
     modalContent.classList.add("modal-content");
-    menuImg.classList.add("menu-img");
+    menuImgContainer.classList.add("menu-img");
     menuItems.classList.add("menu-items");
     menuTitle.classList.add("menu-title");
     itemsContainer.classList.add("items");
@@ -39,7 +46,7 @@ function createModal(menuArray, imageSrc, titleText, id){
     })
 
     menuItems.append(menuTitle, itemsContainer);
-    modalContent.append(closeBtn, menuImg, menuItems);
+    modalContent.append(closeBtn, menuImgContainer, menuItems);
     modalBg.appendChild(modalContent);
     document.body.appendChild(modalBg);
 }
@@ -57,7 +64,7 @@ function createBurgersMenu(){
     },
     {
         title: "Burger Le Fermier",
-        ingredients: "Lettuce, tomato, braised and marinated chicken, Swiss cheese, chive ,mustard,& garlic sauce",
+        ingredients: "Lettuce, tomato, braised and marinated chicken, Swiss cheese, chive, mustard, garlic sauce",
         price: "14$",
     },
     {
@@ -72,7 +79,9 @@ function createBurgersMenu(){
     },
     ];
 
-    createModal(burgersMenu, "../images/menu-burger.jpg", "Main courses", "main-courses-modal");
+    const burgersImgArray = ["../images/menu-burger.jpg", "../images/menu-burger1.jpg", "../images/menu-burger2.jpg", "../images/menu-burger3.jpg", "../images/menu-burger4.jpg",
+    ];
+    createModal(burgersMenu, burgersImgArray, "Main courses", "main-courses-modal");
 }
 
 function createCocktailsMenu(){
@@ -102,10 +111,47 @@ function createCocktailsMenu(){
         ingredients: "Southern Comfort, Bacardi Dragon Berry, Mango, Fresh Lemon & Lime",
         price: "12$",
     },
+    {
+        title: "Camaro Red Sangria",
+        ingredients: "Blackberry & Cherry Infused Vodka Merlot, Fresh Seasonal Fruits",
+        price: "13$",
+    },
     ];
 
-    createModal(cocktailsMenu, "../images/menu-cocktail.jpg", "Cocktails", "cocktails-modal");
+    const cocktailsImgArray = ["../images/menu-cocktail.jpg", "../images/menu-cocktail1.jpg", "../images/menu-cocktail2.jpg",
+    ];
+    createModal(cocktailsMenu, cocktailsImgArray, "Cocktails", "cocktails-modal");
 }
+
+let burgersIndex = 0;
+let cocktailsIndex = 0;
+
+function showSlides(selector, index) {
+    let i;
+    let slides = document.querySelectorAll(selector); //"#id img"
+    for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+    }
+    if (index == slides.length) {index = 0}    
+    slides[index].style.display = "block";
+    index++;
+    setTimeout(showSlides, 2000, selector, index); // Change image every 2 seconds
+}
+
+/*let cocktailsIndex = 0;
+function showCocktailSlides() {
+    let i;
+    let selector = "#cocktails-modal img"
+    let slides = document.querySelectorAll(selector); //"#id img"
+    console.log(`${selector} : index = ${cocktailsIndex}`);
+    for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+    }
+    cocktailsIndex++;
+    if (cocktailsIndex == slides.length) {cocktailsIndex = 0}    
+    slides[cocktailsIndex].style.display = "block";
+    setTimeout(showCocktailSlides, 2000,); // Change image every 2 seconds
+}*/
 
 export default function menu(){
     const menuContent = document.createElement('div');
@@ -129,10 +175,11 @@ export default function menu(){
     menuText.innerText = "Menu";
     mainCoursesText.innerText = "Main Courses";
     cocktailsText.innerText = "Cocktails";
-
     
     createBurgersMenu();
     createCocktailsMenu();
+    showSlides("#main-courses-modal img", burgersIndex);
+    showSlides("#cocktails-modal img", cocktailsIndex);
     document.addEventListener('click', (e) => {
         if (e.target && e.target.id == "main-courses-text"){
             document.querySelector("#main-courses-modal").style.display = "flex";
