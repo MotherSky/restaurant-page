@@ -30,7 +30,7 @@ export default function contact(){
     const contactContainer = document.createElement('div');
     contactContainer.classList.add("contact-container");
     const contactTitle = document.createElement('p');
-    contactTitle.innerText = "Contact Us";
+    contactTitle.innerText = "Contact";
     contactTitle.classList.add("big-text");
     const jobContact = document.createElement('p');
     jobContact.innerText = "For job opportunities, please send your resume to ";

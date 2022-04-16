@@ -26,7 +26,7 @@ export default function home(){
     description.classList.add("small-text");
     whatWeDo.classList.add("medium-text");
 
-    for (let i = 0; i < 5; i++){ // create 5 nodes and add awards to each one
+    for (let i = 0; i < 6; i++){ // create 6 nodes and add awards to each one
         let img = document.createElement('img');
         img.setAttribute("src", "../images/s1 " + i + ".png");
         awardsDiv.appendChild(img);

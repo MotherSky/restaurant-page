@@ -42,9 +42,14 @@ body{
 #header ul{
     list-style-type: none;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 4fr;
     align-items: center;
     padding: 0 5%;
+}
+
+#header .navbar{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 #header .header-logo {
@@ -65,6 +70,19 @@ body{
 #header li:hover {
     color : #C28446;
     border-top: 1px solid #C28446;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+.close-navbar {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    width: 60px;
+    cursor: pointer;
 }
 
 /*
@@ -129,8 +147,12 @@ body{
 
 .home .awards-div {
     margin: 48px 10%;
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 16px;
+    /*
+    display:flex;
+    justify-content: space-around;*/
 }
 
 /*
@@ -325,4 +347,63 @@ body{
 
 .contact a{
     color: #bbc0c2;
+}
+
+
+/*
+**
+** MEDIA QUERIES
+**
+*/
+
+@media only screen and (max-width: 700px){
+    /* HEADER */
+    #header .navbar {
+        display: none;
+        position: fixed;
+        background-color: #182128;
+        opacity: 0.95;
+        top: 0;
+        right: 0;
+        width: 60%;
+        height: 100vh;
+        padding: 24px 0;
+        z-index: 100;
+        transition: 0.5s;
+        border-radius: 0 0 0 50%;
+        grid-template-columns: none;
+        grid-template-rows: repeat(8, 1fr);
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+    }
+
+    #header ul {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    #header .header-logo {
+        margin-left: 0;
+    }
+
+    .hamburger-menu {
+        display: flex;
+        justify-self: end;
+        width: 60px;
+    }
+
+    #content .small-text {
+        column-count: auto;
+    }
+}
+
+@media only screen and (min-width: 700px){
+    #header .navbar {
+        display: grid !important;
+    }    
+
+    .close-navbar {
+        display: none !important;
+    }
 }
