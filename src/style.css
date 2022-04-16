@@ -245,7 +245,7 @@ body{
 }
 /*
 **
-** LOCATION CSS
+** VISIT US CSS
 **
 */
 
@@ -264,4 +264,58 @@ body{
 }
 
 
+/*
+**
+** CONTACT CSS
+**
+*/
 
+.contact .contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 32px;
+    padding-bottom: 64px;
+}
+
+.contact p {
+    width: min(60%, 600px);
+    padding: 0;
+}
+
+.form-container {
+    align-self: stretch;
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: min(50%, 500px);
+    justify-content: center;
+}
+
+.field {
+    padding: 12px;
+    background-color: #0f0f0f;
+    border: 1px solid black;
+    color: gray;
+}
+
+
+.form-container textarea {
+    resize: vertical;
+    min-height: 100px;
+    max-height: 150px;
+}
+
+.form-container button {
+    cursor: pointer;
+    justify-self: center;
+    padding: 12px 24px;
+}
+
+.form-container button:hover {
+	background-color: #000;
+}
+
+.contact a{
+    color: #bbc0c2;
+}

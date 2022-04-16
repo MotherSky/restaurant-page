@@ -1,7 +1,7 @@
 import home from './home.js';
 import menu from './menu.js';
 import visit from './visit.js'
-import about from './about.js'
+import contact from './contact.js'
 
 const contentDiv = document.querySelector("#content");
 const body = document.body;
@@ -18,7 +18,7 @@ function createHeaderItems(){
         items[i].classList.add("header-item");
         list.appendChild(items[i]); // add each element to parent(ul)
     }
-    list.children[2].classList.add("active-item"); // add active-item class to first item(home) (ADD IT BACK TO FIRST CHILD WHEN FINISHED TESTING)
+    list.children[0].classList.add("active-item"); // add active-item class to first item(home) (ADD IT BACK TO FIRST CHILD WHEN FINISHED TESTING)
     return (list);
 }
 
@@ -33,7 +33,7 @@ function selectTab(){
                 contentItems.forEach((item) => {
                     item.classList.remove("active-content");
                 });
-                const activeClass = e.target.classList[0]; // get first item class (Home/Menu/Location/About...)
+                const activeClass = e.target.classList[0]; // get first item class (Home/Menu/Location/Contact...)
                 const activeContent = document.querySelectorAll("." + activeClass)[1]; // the second node should be the active content item
                 activeContent.classList.add("active-content");
             }
@@ -49,5 +49,5 @@ function createHeader(){
 }
 
 body.insertBefore(createHeader(), contentDiv);
-contentDiv.append(home(), menu(), visit(), about());
+contentDiv.append(home(), menu(), visit(), contact());
 selectTab();

@@ -1,6 +1,6 @@
 export default function visit(){
     const visitContent = document.createElement('div');
-    visitContent.classList.add("visit-us", "content-item", "active-content");
+    visitContent.classList.add("visit-us", "content-item");
     const visitTitle = document.createElement('p'); // to change later for h1
     visitTitle.innerText = "Visit Us";
     visitTitle.classList.add("big-text");

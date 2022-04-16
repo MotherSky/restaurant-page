@@ -4,17 +4,19 @@ export default function home(){
     const descriptionDiv = document.createElement('div');
     const awardsDiv = document.createElement('div');
 
-    HomeContent.classList.add("home", "content-item"); // ADD active-content when finished testing
+    HomeContent.classList.add("home", "content-item", "active-content"); // ADD active-content when finished testing
     imageDiv.classList.add("image-div");
     descriptionDiv.classList.add("description-div");
     awardsDiv.classList.add("awards-div");
 
     const boldTitle = document.createElement('p');
     const slogan = document.createElement('p'); 
+    const whatWeDo = document.createElement('p');
     const description = document.createElement('p'); 
 
     boldTitle.innerText = "Home Burger Bar";
     slogan.innerText = "Because There is no place like Home.";
+    whatWeDo.innerText = "What We Do?"
     description.innerText = `Since the conception of Home Burger Bar to its current execution, the mission remains the same: influencing the idea of the perfect burger bar.
 
     This is why we cook with heart and create out of passion. At Home Bar Burger we prefer brie for cheese and we braise our meats.
@@ -22,6 +24,7 @@ export default function home(){
     slogan.classList.add("medium-text");
     boldTitle.classList.add("big-text");
     description.classList.add("small-text");
+    whatWeDo.classList.add("medium-text");
 
     for (let i = 0; i < 5; i++){ // create 5 nodes and add awards to each one
         let img = document.createElement('img');
@@ -31,7 +34,7 @@ export default function home(){
 
     imageDiv.appendChild(boldTitle);
     imageDiv.appendChild(slogan);
-    descriptionDiv.appendChild(description);
+    descriptionDiv.append(whatWeDo, description);
     HomeContent.appendChild(imageDiv);
     HomeContent.appendChild(descriptionDiv);
     HomeContent.appendChild(awardsDiv);
