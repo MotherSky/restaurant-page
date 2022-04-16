@@ -11,6 +11,10 @@ function createHeaderItems(){
     let items = Array(4);
     const itemsContent = ["Home", "Menu", "Visit Us", "Contact"];
     const itemsClasses = ["home", "menu", "visit-us", "contact"];
+    const headerLogo = document.createElement("img");
+    headerLogo.classList.add("header-logo");
+    headerLogo.setAttribute("src", "../images/logo.png")
+    list.appendChild(headerLogo);
     for (let i = 0; i < items.length; i++){
         items[i] = document.createElement("li"); // create 4 ul items
         items[i].textContent = itemsContent[i]; // change the text of each li
@@ -25,6 +29,8 @@ function createHeaderItems(){
 function selectTab(){
     const headerItems = document.querySelectorAll(".header-item");
     const contentItems = document.querySelectorAll(".content-item");
+    const homeItem = document.querySelector("#header .home");
+    const logo = document.querySelector(".header-logo");
     headerItems.forEach((item) => {
         item.addEventListener("click", (e) => {
             if (!e.target.classList.contains("active-item")){ // if the item isn't active already
@@ -38,6 +44,11 @@ function selectTab(){
                 activeContent.classList.add("active-content");
             }
         })
+    });
+    logo.addEventListener("click", (e) => {
+        if (e.target.classList.contains("header-logo")){
+            homeItem.click();
+        }
     });
 }
 
