@@ -28,7 +28,7 @@ export default function home(){
 
     for (let i = 0; i < 6; i++){ // create 6 nodes and add awards to each one
         let img = document.createElement('img');
-        img.setAttribute("src", "../images/s1 " + i + ".png");
+        img.setAttribute("src", "images/s1 " + i + ".png");
         awardsDiv.appendChild(img);
     }
 

@@ -79,7 +79,7 @@ function createBurgersMenu(){
     },
     ];
 
-    const burgersImgArray = ["../images/menu-burger.jpg", "../images/menu-burger1.jpg", "../images/menu-burger2.jpg", "../images/menu-burger3.jpg", "../images/menu-burger4.jpg",
+    const burgersImgArray = ["images/menu-burger.jpg", "images/menu-burger1.jpg", "images/menu-burger2.jpg", "images/menu-burger3.jpg", "images/menu-burger4.jpg",
     ];
     createModal(burgersMenu, burgersImgArray, "Main courses", "main-courses-modal");
 }
@@ -118,7 +118,7 @@ function createCocktailsMenu(){
     },
     ];
 
-    const cocktailsImgArray = ["../images/menu-cocktail.jpg", "../images/menu-cocktail1.jpg", "../images/menu-cocktail2.jpg",
+    const cocktailsImgArray = ["images/menu-cocktail.jpg", "images/menu-cocktail1.jpg", "images/menu-cocktail2.jpg",
     ];
     createModal(cocktailsMenu, cocktailsImgArray, "Cocktails", "cocktails-modal");
 }

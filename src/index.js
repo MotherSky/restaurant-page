@@ -16,12 +16,12 @@ function createHeaderItems(){
     const navbar = document.createElement("div");
     const closeNavbar = document.createElement("img");
     navbar.classList.add("navbar");
-    hamburgerMenu.setAttribute("src", "../images/menu.svg");
-    closeNavbar.setAttribute("src", "../images/close.svg");
+    hamburgerMenu.setAttribute("src", "images/menu.svg");
+    closeNavbar.setAttribute("src", "images/close.svg");
     closeNavbar.classList.add("close-navbar");
     hamburgerMenu.classList.add("hamburger-menu");
     headerLogo.classList.add("header-logo");
-    headerLogo.setAttribute("src", "../images/logo.png");
+    headerLogo.setAttribute("src", "images/logo.png");
     navbar.appendChild(closeNavbar);
     list.append(headerLogo, navbar);
     for (let i = 0; i < items.length; i++){
